@@ -13,6 +13,6 @@ services:
       - .:/app
     ports:
       - 8000:80
-    command: ping mysqldb
+    command: sh run_tests.sh
     depends_on:
       - mysqldb
