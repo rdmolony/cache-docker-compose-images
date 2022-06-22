@@ -52,9 +52,6 @@ jobs:
       - name: Test
         run: docker compose run web
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
       - name: Tag image
         run:  docker tag $IMAGE_NAME:latest ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$GITHUB_SHA
 
