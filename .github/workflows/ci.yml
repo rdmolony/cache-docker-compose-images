@@ -44,7 +44,7 @@ jobs:
           set: |
             web.cache-from=type=gha
             web.cache-to=type=gha
-            web.tags=${{ env.IMAGE_NAME }}:${{ env.PUSH_TAG }}
+            web.tags=[${{ env.IMAGE_NAME }}:${{ env.PUSH_TAG }}, ${{ env.IMAGE_NAME }}]
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
