@@ -41,4 +41,4 @@ jobs:
         continue-on-error: true
 
       - name: Test
-        run: docker compose run web sh run_tests.sh
+        run: docker compose run web

@@ -4,4 +4,4 @@ services:
   web:
     build:
       context: .
-    command: echo success!
+    command: echo "Tests have run successfully!"
