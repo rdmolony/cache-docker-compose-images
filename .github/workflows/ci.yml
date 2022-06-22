@@ -47,7 +47,7 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ github.workflow }}-{hash}-${{ hashFiles('**/Dockerfile') }}
           restore-keys: |
-            ${{ runner.os }}-${{ github.workflow }}-
+            ${{ runner.os }}-${{ github.workflow }}-{hash}-${{ hashFiles('**/Dockerfile') }}
             
       - name: Test
         run: docker compose run web
