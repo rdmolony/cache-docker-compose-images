@@ -49,5 +49,8 @@ jobs:
       - name: Test
         run: docker compose run web
       
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      - name: Push image to Docker Hub
+        run: |
+          docker tag ${{ env.IMAGE_NAME }} ${{ env.IMAGE_NAME }}:${{ PUSH_TAG }}
+          docker push ${{ env.IMAGE_NAME }}
+          docker push ${{ env.IMAGE_NAME }}:${{ PUSH_TAG }}
