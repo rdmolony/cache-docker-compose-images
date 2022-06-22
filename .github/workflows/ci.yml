@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  PUSH_TAG: ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.sha }}
+  PUSH_TAG: rdmolony/test:${{ github.sha }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
