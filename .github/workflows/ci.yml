@@ -40,7 +40,7 @@ jobs:
         with:
           push: false
           set: |
-            *.tags=${{ env.PUSH_TAG }}
+            web.tags=${{ env.PUSH_TAG }}
             *.cache-from=type=gha
             *.cache-to=type=gha
 
