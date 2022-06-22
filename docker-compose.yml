@@ -5,5 +5,3 @@ services:
     build:
       context: .
     command: echo "Test run successful!"
-    depends_on:
-      - mysqldb
