@@ -43,7 +43,7 @@ jobs:
           set: |
             web.cache-from=type=gha
             web.cache-to=type=gha
-            web.image=${{ env.IMAGE_NAME }}:${{ env.PUSH_TAG }}
+            web.tags=${{ env.IMAGE_NAME }}:${{ env.PUSH_TAG }}
 
       - name: Test
         run: docker compose run web sh run_tests.sh
