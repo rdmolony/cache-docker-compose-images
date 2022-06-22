@@ -40,9 +40,5 @@ jobs:
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        # trigger rerun
-
       - name: Test
         run: docker compose run web sh run_tests.sh
