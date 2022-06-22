@@ -9,6 +9,7 @@ services:
   web:
     build:
       context: .
+    image: rdmolony/web
     volumes:
       - .:/app
     ports:

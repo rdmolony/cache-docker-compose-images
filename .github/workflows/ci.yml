@@ -14,7 +14,8 @@ on:
   workflow_dispatch:
 
 env:
-  PUSH_TAG: rdmolony/test:${{ github.sha }}
+  IMAGE_NAME: rdmolony/web
+  PUSH_TAG: ${{ github.sha }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,9 +41,9 @@ jobs:
         with:
           push: false
           set: |
-            web.tags=${{ env.PUSH_TAG }}
-            *.cache-from=type=gha
-            *.cache-to=type=gha
+            web.cache-from=type=gha
+            web.cache-to=type=gha
+            web.image=${{ env.IMAGE_NAME }}:${{ env.PUSH_TAG }}
 
       - name: Test
         run: docker compose run web sh run_tests.sh
