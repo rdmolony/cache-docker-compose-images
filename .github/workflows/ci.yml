@@ -48,9 +48,8 @@ jobs:
       - name: Push image to Docker Hub
         env:
           IMAGE_NAME: rdmolony/cache-docker-compose-images
-          PUSH_TAG: ${{ github.sha }}
-          UNIQUE_IMAGE_NAME: $IMAGE_NAME:$PUSH_TAG
+          COMMIT_SHA: ${{ github.sha }}
         run: |
-          docker tag $IMAGE_NAME:latest $UNIQUE_IMAGE_NAME
-          docker push $UNIQUE_IMAGE_NAME
+          docker tag $IMAGE_NAME:latest $IMAGE_NAME:$COMMIT_SHA
+          docker push $IMAGE_NAME:$COMMIT_SHA
           docker push $IMAGE_NAME:latest
