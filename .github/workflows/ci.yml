@@ -43,7 +43,9 @@ jobs:
         continue-on-error: true
 
       - name: Test
-        run: docker compose run web
+        run: |
+          docker compose build web
+          docker compose run web
       
       - name: Push image to Docker Hub
         env:
@@ -51,5 +53,4 @@ jobs:
           COMMIT_SHA: ${{ github.sha }}
         run: |
           docker tag $IMAGE_NAME:latest $IMAGE_NAME:$COMMIT_SHA
-          docker push $IMAGE_NAME:$COMMIT_SHA
-          docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:$COMMIT_SHA $IMAGE_NAME:latest
