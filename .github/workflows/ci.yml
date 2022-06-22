@@ -34,7 +34,9 @@ jobs:
         with:
           push: false
           load: true
-          tags: ${IMAGE_NAME}/${PUSH_TAG}
+          tags: ${{ env.IMAGE_NAME }}:${{ env.PUSH_TAG }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
