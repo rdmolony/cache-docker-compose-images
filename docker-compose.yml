@@ -4,10 +4,4 @@ services:
   web:
     build:
       context: .
-    volumes:
-      - .:/app
-    ports:
-      - 8000:80
     command: echo success!
-    depends_on:
-      - mysqldb
