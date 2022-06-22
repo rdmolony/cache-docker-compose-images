@@ -45,9 +45,9 @@ jobs:
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
         with:
-          key: ${{ runner.os }}-${{ github.workflow }}-{hash}-${{ hashFiles('**/Dockerfile') }}
+          key: ${{ runner.os }}-${{ github.workflow }}-${{ hashFiles('**/Dockerfile') }}-{hash}
           restore-keys: |
-            ${{ runner.os }}-${{ github.workflow }}-{hash}-${{ hashFiles('**/Dockerfile') }}
+            ${{ runner.os }}-${{ github.workflow }}-${{ hashFiles('**/Dockerfile') }}
             
       - name: Test
         run: docker compose run web
