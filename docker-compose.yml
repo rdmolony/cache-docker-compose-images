@@ -4,5 +4,5 @@ services:
   web:
     build:
       context: .
-    image: rdmolony/cache-docker-compose-images
+    image: rdmolony/cache-docker-compose-images:latest
     command: echo "Tests have run successfully!"
