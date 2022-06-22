@@ -47,6 +47,9 @@ jobs:
           docker compose build web
           docker compose run web
       
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Push image to Docker Hub
         env:
           IMAGE_NAME: rdmolony/cache-docker-compose-images
