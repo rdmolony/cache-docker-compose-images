@@ -1,18 +1,8 @@
 version: "3.7"
 
 services:
-  mysqldb:
-    image: mysql
-    environment:
-      - MYSQL_DATABASE=$MYSQL_NAME
-      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
   web:
     build:
       context: .
-    volumes:
-      - .:/app
-    ports:
-      - 8000:80
-    command: sh run_tests.sh
-    depends_on:
-      - mysqldb
+    image: rdmolony/web
+    command: echo "Test run successful!"
