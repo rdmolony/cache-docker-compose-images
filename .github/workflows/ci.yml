@@ -45,8 +45,6 @@ jobs:
             web.cache-from=type=gha
             web.cache-to=type=gha
             web.tags=${{ env.IMAGE_NAME }}
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       
-      # RERUN
+      - name: Test
+        command: docker compose run web
