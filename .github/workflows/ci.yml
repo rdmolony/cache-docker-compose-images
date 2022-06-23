@@ -47,4 +47,4 @@ jobs:
             web.tags=${{ env.IMAGE_NAME }}
       
       - name: Test
-        command: docker compose run web
+        run: docker compose run web
