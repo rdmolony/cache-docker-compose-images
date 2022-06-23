@@ -4,4 +4,5 @@ services:
   web:
     build:
       context: .
+    image: rdmolony/web
     command: echo "Test run successful!"
