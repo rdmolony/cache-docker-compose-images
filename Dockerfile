@@ -3,3 +3,4 @@ FROM alpine as base
 RUN sleep 5
 # Check am I run?
 RUN sleep 5 
+COPY dependencies.lock .
